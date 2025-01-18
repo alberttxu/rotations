@@ -9,3 +9,8 @@ In short, any rotation matrix R can be equal to exp(S), where S is a skew-symmet
 And there are multiple values of S (infinite, in fact) that satisfy R = exp(S).
 Out of the 9 entries in S, only 3 are unique, and these 3 parameters can be stored as a vector.
 It turns out that said vector is an axis-angle representation (it points in a direction perpendicular to the plane of rotation, and it's norm is the amount of rotation in radians).
+
+This code is messy and there are lots of unnecessary math functions that I was playing around with.
+The 2 core functions are `expm_Rodrigues` and `logm_Rodrigues` which convert back and forth between a rotation matrix and a skew-symmetric matrix.
+For spherical linear interpolation, see the functions `right_plus`, `right_minus`, and `left_plus`.
+
